@@ -1,4 +1,4 @@
-package com.zhang.init;
+package com.zhang;
 
 import com.zhang.config.Config;
 import org.springframework.web.WebApplicationInitializer;
@@ -10,9 +10,10 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 /**
- * Created by Administrator on 2016/11/7.
+ * Created by Administrator on 2016/11/8.
  */
-public class WebInitalizer implements WebApplicationInitializer {
+public class init implements WebApplicationInitializer {
+
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext annotationConfigWebApplicationContext = new AnnotationConfigWebApplicationContext();
@@ -23,16 +24,5 @@ public class WebInitalizer implements WebApplicationInitializer {
         dispatcher.addMapping("/");
         dispatcher.setLoadOnStartup(1);
 
-        System.out.println("\t┌──────────────────┐");
-        System.out.println("\t│                                    │");
-        System.out.println("\t│                                    │");
-        System.out.println("\t│                                    │");
-        System.out.println("\t│servlet3.0 gogogo 加载配置完成！！！│");
-        System.out.println("\t│                                    │");
-        System.out.println("\t│                                    │");
-        System.out.println("\t│                                    │");
-        System.out.println("\t└──────────────────┘");
     }
-
-
 }
