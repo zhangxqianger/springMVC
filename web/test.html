@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
 <body>
-    静态访问资源
+<div id="msg">
+
+</div>
+
+<script type="text/javascript">
+    if (typeof(EventSource) !== "undefined") {
+        var source = new EventSource("push");
+        source.onmessage = function (event) {
+            document.getElementById("msg").innerHTML += event.data + "<br>";
+        };
+
+    }
+    else {
+        document.getElementById("msg").innerHTML = "Sorry, your browser does not support server-sent events...";
+    }
+</script>
 </body>
 </html>

@@ -12,7 +12,7 @@ import javax.servlet.ServletRegistration;
 /**
  * Created by Administrator on 2016/11/8.
  */
-public class init implements WebApplicationInitializer {
+public class WebInit implements WebApplicationInitializer {
 
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
@@ -24,5 +24,9 @@ public class init implements WebApplicationInitializer {
         dispatcher.addMapping("/");
         dispatcher.setLoadOnStartup(1);
 
+        // 开启异步
+        dispatcher.setAsyncSupported(true);
+
+        System.out.println("servlet配置完成");
     }
 }

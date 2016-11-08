@@ -16,6 +16,7 @@ public class ExceptionHandlerAdvice {
     @ExceptionHandler(Exception.class)
     public ModelAndView exception(Exception e) {
         System.out.println("捕获到的异常信息：" + e.toString());
+        e.printStackTrace();
         ModelAndView modelAndView = new ModelAndView("error");
         modelAndView.addObject("errorMessage", e.getMessage());
         return modelAndView;
