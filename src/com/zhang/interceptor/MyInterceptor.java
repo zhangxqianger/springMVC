@@ -23,5 +23,6 @@ public class MyInterceptor extends HandlerInterceptorAdapter {
         long l1 = System.currentTimeMillis();
 
         System.out.println("时间：" + (l1 - l) + "ms");
+
     }
 }
